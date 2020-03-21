@@ -58,7 +58,7 @@ appKeys.forEach(app => {
     $('.app-container').appendChild(el);
     var url = Apps[app];
     el.outerHTML = `<button class="app btn btn-primary" onclick="setApp('${url}', openWindow)" onmouseup="clickedButton = this;clickedApp='${app}';">
-    <img src="${'http://www.google.com/s2/favicons?domain=' + encodeURIComponent(url.substring(url.indexOf('://')+3))}">
+    <img src="${'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(url.substring(url.indexOf('://')+3))}">
     ${app}&nbsp</button>&nbsp`;
 });
 
