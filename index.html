@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppGenerator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+    <meta name="theme-color" content="#e6e6e6">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onmousedown="if (event.which == 3) clickedButton = null;">
+<input type="text" id="copy" class="hide">
+
+    <div class="menu">
+        <ul class="menu-options">
+          <li class="menu-option" onclick="menuCopyURL()">Copiar URL do app</li>
+          <li class="menu-option" onclick="menuCopyOpenURL()">Copiar URL para abrir com AppCollection</li>
+          <li id="menu-remove" class="menu-option" onclick="menuRemove()">Remover</li>
+          <li id="menu-open" class="menu-option" onclick="setApp(Apps[clickedApp], openWindow)">Abrir</li>
+          <li id="menu-openWin" class="menu-option" onclick="setApp(Apps[clickedApp], true)">Abrir no modo Janela</li>
+          <li id="menu-openApp" class="menu-option" onclick="setApp(Apps[clickedApp], false)">Abrir no modo App</li>
+        </ul>
+      </div>
+      <!--CTX MENU-->
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">AppCollection</h1>
+        <p class="lead">Sua coleção de aplicativos!</p>
+    </div>
+    <div class="text-center">
+
+        <input id="urlInput" placeholder="URL" class="form-control-text">
+        <input id="nameInput" placeholder="Nome" class="form-control-text">
+        <button onclick="addApp()">Adicionar</button>
+        <input id="openWindow" type="checkbox">Abrir em Janela
+
+        <br>
+        <hr>
+
+        <div class="app-container">
+
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="src/util.js"></script>
+<script src="src/cfg.js"></script>
+<script src="src/main.js"></script>
+</html>
